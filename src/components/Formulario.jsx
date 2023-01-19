@@ -1,15 +1,20 @@
+import useClima from "../hooks/useClima";
+
 const Formulario = () => {
-  return (
+
+    const {busqueda, datosBusqueda} = useClima()
+    const {ciudad, pais} = busqueda
+    return (
     <div className="contenedor">
       <form>
         <div className="campo">
           <label htmlFor="ciudad">Ciudad</label>
-          <input type="text" name="ciudad" id="ciudad" />
+          <input value={ciudad} onChange={datosBusqueda} type="text" name="ciudad" id="ciudad" />
         </div>
 
         <div className="campo">
           <label htmlFor="pais">País</label>
-        <select name="pais" id="pais">
+        <select value={pais} onChange={datosBusqueda} name="pais" id="pais">
             <option value="">-- Seleccione un País --</option>
             <option value="US">estados Unidos</option>
             <option value="MX">México</option>
