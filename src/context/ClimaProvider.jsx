@@ -21,7 +21,7 @@ const ClimaProvider = ({ children }) => {
   };
 
   const consultarClima = async datos => {
-    
+    setResultado({})
     setCargando(true)
     setNoResultado(false)
     try {
@@ -41,7 +41,6 @@ const ClimaProvider = ({ children }) => {
      
       
     } catch (error) {
-      setResultado({})
         setNoResultado("No hay resultados.");
     } finally {
         setCargando(false)
