@@ -12,11 +12,13 @@ const AppClima = () => {
     <>
       <main className="dos-columnas">
         <Formulario/>
-        {cargando ? <Loading/> : 
-        resultado?.name ? <Resultado/> :
-        noResultado ? <p>{noResultado}</p>
-        : <p>El clima se va a mostrar aquí</p>
-    }
+        { 
+              cargando ? <Loading /> : 
+              resultado?.name ? <Resultado /> :
+              noResultado ? <p>{noResultado}</p>
+              : <p>El clima se va a mostrar aquí</p>
+            }
+            
       </main>
     </>
   )
